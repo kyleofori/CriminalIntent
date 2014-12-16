@@ -13,7 +13,7 @@ import android.widget.EditText;
 /**
  * Created by kyleofori on 12/15/14.
  */
-public class CrimeFragment extends Fragment {
+public class CrimeFragment extends android.app.Fragment {
     private Crime mCrime;
     private EditText mTitleField;
 
@@ -44,7 +44,7 @@ public class CrimeFragment extends Fragment {
 
             }
         });
-        
+
         return v;
     }
 }
