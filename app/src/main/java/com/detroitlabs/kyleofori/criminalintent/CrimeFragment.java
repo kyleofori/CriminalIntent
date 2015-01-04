@@ -14,7 +14,7 @@ import android.widget.EditText;
 /**
  * Created by kyleofori on 12/15/14.
  */
-public class CrimeFragment extends android.app.Fragment {
+public class CrimeFragment extends android.support.v4.app.Fragment {
     private Crime mCrime;
     private EditText mTitleField;
     private Button mDateButton;
