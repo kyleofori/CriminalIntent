@@ -11,10 +11,14 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 
+import java.util.UUID;
+
 /**
  * Created by kyleofori on 12/15/14.
  */
 public class CrimeFragment extends android.support.v4.app.Fragment {
+    public static final String EXTRA_CRIME_ID = "com.detroitlabs.kyleofori.criminalintent.crime_id";
+
     private Crime mCrime;
     private EditText mTitleField;
     private Button mDateButton;
@@ -23,7 +27,8 @@ public class CrimeFragment extends android.support.v4.app.Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mCrime = new Crime();
+        UUID crimeId = (UUID) getActivity().getIntent().getSerializableExtra(EXTRA_CRIME_ID);
+        mCrime = CrimeLab.get(getActivity()).getCrime(crimeId);
     }
 
     @Override
