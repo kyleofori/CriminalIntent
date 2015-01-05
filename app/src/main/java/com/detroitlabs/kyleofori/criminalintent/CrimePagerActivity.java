@@ -1,23 +1,21 @@
 package com.detroitlabs.kyleofori.criminalintent;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
 
 import java.util.UUID;
 
 
-public class CrimeActivity extends SingleFragmentActivity {
+public class CrimePagerActivity extends FragmentActivity {
+    private ViewPager mViewPager;
 
     @Override
-    protected android.support.v4.app.Fragment createFragment() {
-       UUID crimeId = (UUID) getIntent().getSerializableExtra(CrimeFragment.EXTRA_CRIME_ID);
-
-        return CrimeFragment.newInstance(crimeId);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
-
+    
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
