@@ -44,6 +44,14 @@ public class CrimePagerActivity extends FragmentActivity {
                 return mCrimes.size();
             }
         });
+
+        UUID crimeId = (UUID) getIntent().getSerializableExtra(CrimeFragment.EXTRA_CRIME_ID);
+        for (int i = 0; i < mCrimes.size(); i++) {
+            if(mCrimes.get(i).getId().equals(crimeId)) {
+                mViewPagerg.setCurrentItem(i);
+                break;
+            }
+        }
     }
 
 
